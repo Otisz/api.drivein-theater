@@ -20,4 +20,10 @@ class AgendaController extends Controller
 
         return AgendaResource::make($agenda);
     }
+    public function show(Agenda $agenda): AgendaResource
+    {
+        $agenda->load('movie');
+
+        return AgendaResource::make($agenda);
+    }
 }

@@ -6,6 +6,7 @@ use App\Http\Requests\StoreMovieRequest;
 use App\Http\Requests\UpdateMovieRequest;
 use App\Http\Resources\Movie\MovieResource;
 use App\Models\Movie;
+use Illuminate\Http\Response;
 
 class MovieController extends Controller
 {
@@ -36,5 +37,12 @@ class MovieController extends Controller
         ]);
 
         return MovieResource::make($movie);
+    }
+
+    public function destroy(Movie $movie): Response
+    {
+        $movie->delete();
+
+        return response()->noContent();
     }
 }

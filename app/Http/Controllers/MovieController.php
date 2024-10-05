@@ -1,0 +1,22 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\StoreMovieRequest;
+use App\Http\Resources\Movie\MovieResource;
+use App\Models\Movie;
+
+class MovieController extends Controller
+{
+    public function store(StoreMovieRequest $request): MovieResource
+    {
+        $movie = Movie::create([
+            'title' => $request->title,
+            'description' => $request->description,
+            'age_rating' => $request->ageRating,
+            'language' => $request->language,
+        ]);
+
+        return MovieResource::make($movie);
+    }
+}

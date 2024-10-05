@@ -1,0 +1,17 @@
+<?php
+
+namespace {{ namespace }};
+
+use App\Http\Resources\JsonResource;
+use Illuminate\Http\Request;
+
+/**
+ * @mixin Model
+ */
+class {{ class }} extends JsonResource
+{
+    public function toArray(Request $request): array
+    {
+        return [];
+    }
+}

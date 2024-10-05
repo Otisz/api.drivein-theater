@@ -19,4 +19,9 @@ class MovieController extends Controller
 
         return MovieResource::make($movie);
     }
+
+    public function show(Movie $movie): MovieResource
+    {
+        return MovieResource::make($movie);
+    }
 }

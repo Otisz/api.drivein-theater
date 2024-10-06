@@ -6,6 +6,7 @@ use App\Http\Requests\StoreAgendaRequest;
 use App\Http\Requests\UpdateAgendaRequest;
 use App\Http\Resources\Agenda\AgendaResource;
 use App\Models\Agenda;
+use Illuminate\Http\Response;
 
 class AgendaController extends Controller
 {
@@ -40,5 +41,12 @@ class AgendaController extends Controller
         $agenda = $agenda->fresh('movie');
 
         return AgendaResource::make($agenda);
+    }
+
+    public function destroy(Agenda $agenda): Response
+    {
+        $agenda->delete();
+
+        return response()->noContent();
     }
 }

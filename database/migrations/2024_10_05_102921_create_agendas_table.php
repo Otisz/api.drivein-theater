@@ -15,7 +15,7 @@ return new class extends Migration
             $table->uuid('id')->primary();
             $table->foreignUuid('movie_id')->constrained();
             $table->unsignedSmallInteger('seats');
-            $table->timestamp('start_date');
+            $table->timestamp('start_date')->index();
             $table->timestamps();
             $table->softDeletes();
         });

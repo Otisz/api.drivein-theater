@@ -9,4 +9,4 @@ Route::middleware('auth:api')->group(function () {
 });
 
 Route::apiResource('movies', MovieController::class)->only('index', 'show');
-Route::apiResource('agenda', AgendaController::class)->only('show');
+Route::apiResource('agenda', AgendaController::class)->only('index', 'show');

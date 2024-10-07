@@ -18,11 +18,7 @@ class MovieResource extends JsonResource
             'description' => $this->description,
             'ageRating' => $this->age_rating,
             'language' => $this->language,
-            'coverImage' => $this->when(
-                $this->cover_path !== null,
-                fn () => 'TODO: Has cover image',
-                fn () => 'TODO: Cover image is missing'
-            ),
+            'coverImage' => $this->cover_url,
             'createdAt' => $this->created_at->toAtomString(),
             'updatedAt' => $this->updated_at->toAtomString(),
         ];
